@@ -1,14 +1,12 @@
+package controller;
+import dao.StudentDao;
+import ejb.MyInterface;
+import service.model.Student;
 
-import javax.ejb.EJB;
-import javax.ejb.embeddable.EJBContainer;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.naming.Context;
-import javax.naming.NamingException;
-import javax.persistence.PersistenceContext;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import jakarta.inject.Inject;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -16,6 +14,8 @@ import java.io.PrintWriter;
 public class Servlet extends HttpServlet {
     @Inject
     MyInterface myInterface;
+    @Inject
+    StudentDao studentDao;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,6 +23,7 @@ public class Servlet extends HttpServlet {
         out.println("<html><head><title>home1</title></head><body>");
         out.println("<h1>hii</h1>");
         String s = myInterface.sayHello();
+        studentDao.add(new Student("amine","amine@laaguidi"));
         out.println(s);
         out.println("<h1>hii</h1>");
         out.println("</body></html>");

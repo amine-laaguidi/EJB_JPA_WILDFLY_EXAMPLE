@@ -1,4 +1,6 @@
-import javax.ejb.Local;
+package ejb;
+
+import jakarta.ejb.Local;
 
 @Local
 public interface MyInterface {

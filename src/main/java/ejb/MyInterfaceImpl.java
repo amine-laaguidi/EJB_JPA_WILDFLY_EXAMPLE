@@ -1,6 +1,7 @@
-import javax.ejb.Local;
-import javax.ejb.Stateless;
-import javax.inject.Named;
+package ejb;
+
+import jakarta.ejb.Local;
+import jakarta.ejb.Stateless;
 
 @Stateless
 @Local(MyInterface.class)

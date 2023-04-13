@@ -2,8 +2,8 @@
   <artifact type="exploded-ejb" name="MYEJB_TESTING:EJB exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/MYEJB_TESTING_EJB_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="MYEJB_TESTING/ejb/EJB" />
       <element id="module-output" name="MYEJB_TESTING" />
+      <element id="javaee-facet-resources" facet="MYEJB_TESTING/ejb/EJB" />
     </root>
   </artifact>
 </component>
